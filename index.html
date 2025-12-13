@@ -8,7 +8,21 @@
 </head>
 <body>
 
-    <!-- Разместите скрипт для пуш-уведомлений здесь -->
+        
+<button id="init_sub">Подписаться на уведомления</button> // Кнопка подписки
+
+<script>
+	document.getElementById('init_sub').addEventListener('click', function() { // По клику на кнопку..
+	try {
+		var akPush = new AKPush();
+		akPush.initSubscription() // Покажет форму для подписки
+		}
+	catch (e) {
+		console.log(e); // В случае ошибки выведет сообщение в консоль
+		}
+	});
+</script>
+
 
     <p>Урок 5. Тестирование браузерных пушей</p>
 
