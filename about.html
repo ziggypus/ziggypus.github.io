@@ -1,0 +1,68 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>О проекте — Мой мини‑каталог</title>
+  <style>
+    :root { --bg:#0f1115; --panel:#151922; --panel-2:#1b2130; --text:#e7ecf3; --muted:#a9b3c7; --accent:#4f8cff; --accent-2:#8b5cf6; --radius:12px; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 1200px at 120% -10%, #20355a40, transparent),var(--bg)}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:saturate(120%) blur(8px);background:linear-gradient(180deg,#0f1115ee 0,#0f111588 90%,transparent);border-bottom:1px solid #ffffff10}
+    .container{max-width:900px;margin:0 auto;padding:16px 20px}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--text)}
+    .logo-badge{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-size:14px}
+    nav a{color:var(--muted);text-decoration:none;margin:0 8px;font-weight:600}
+    nav a:hover{color:var(--text)}
+    .cart{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:#ffffff0f;border:1px solid #ffffff14}
+    .cart b{display:inline-flex;min-width:22px;height:22px;border-radius:11px;align-items:center;justify-content:center;background:#ffffff14;font-size:12px}
+    h1{margin:16px 0 10px}
+    p{color:var(--muted);line-height:1.6}
+    .btn{appearance:none;border:1px solid #ffffff18;background:#ffffff10;color:var(--text);padding:10px 12px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none}
+    .btn:hover{background:#ffffff16;border-color:#ffffff28}
+    footer{border-top:1px solid #ffffff10;color:var(--muted);font-size:13px;background:linear-gradient(0deg,#0f1115aa,transparent)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container bar">
+      <a class="logo" href="./index.html">
+        <div class="logo-badge">🛒</div>
+        <span>Мой мини‑каталог</span>
+      </a>
+      <nav>
+        <a href="./catalog.html">Каталог</a>
+        <a href="./about.html">О проекте</a>
+      </nav>
+      <div class="cart" aria-label="Корзина">
+        <span>Корзина</span>
+        <b id="cart-count">0</b>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-bottom: 60px;">
+    <h1>О проекте</h1>
+    <p>Это простой многостраничный шаблон для GitHub Pages: главная, каталог с карточками, страницы отдельных товаров. Счётчик корзины сохраняется в LocalStorage и отображается в шапке на любой странице.</p>
+    <p>Код без сборки, чистый HTML/CSS/JS. Можно расширять и подключить свои изображения/товары.</p>
+    <div style="margin-top:16px; display:flex; gap:10px;">
+      <a class="btn" href="./catalog.html">Перейти в каталог</a>
+      <a class="btn" href="./index.html">На главную</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container" style="padding: 20px;">О проекте · © 2025</div>
+  </footer>
+
+  <script>
+    const CART_KEY='cartCount';
+    const el=document.getElementById('cart-count');
+    const get=()=>parseInt(localStorage.getItem(CART_KEY)||'0',10)||0;
+    const set=(n)=>{localStorage.setItem(CART_KEY,n); if(el) el.textContent=n};
+    set(get());
+  </script>
+</body>
+</html>
