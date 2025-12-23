@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 5. Тестирование браузерных пушей</title>
-    <script src="https://pxl.demo.altcraft.com/ak_container.js?id=NTA1fDM=" ></script>
-</head>
-<body>
-
-            <script src=https://pxl.demo.altcraft.com/form/js/embed_v1.js></script>
-<iframe src="https://pxl.demo.altcraft.com/form?form=8NJf1mCeuRv75dBenr42Gi5tC8EeTDMicVC1vTTM4FRBpyFrAvz523BshdJRvTxJLNTFsJJxv7QkVpvCUksfGahi&iframe=1" frameborder="0" name="ak-form-8NJf1mCeuRv75dBenr42Gi5tC8EeTDMicVC1vTTM4FRBpyFrAvz523BshdJRvTxJLNTFsJJxv7QkVpvCUksfGahi" class="ak-form" width="100%" sandbox="allow-same-origin allow-forms allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation"></iframe>
-</body>
-</html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тестовый каталог товаров</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #151922;
+      --panel-2: #1b2130;
+      --text: #e7ecf3;
+      --muted: #a9b3c7;
+      --accent: #4f8cff;
+      --accent-2: #8b5cf6;
+      --success: #22c55e;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text); background: radial-gradient(1200px 1200px at 120% -10%, #20355a40, transparent) , var(--bg);
+    }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: saturate(120%) blur(8px);
+      background: linear-gradient(180deg, #0f1115ee 0, #0f111588 90%, transparent);
+      border-bottom: 1px solid #ffffff10;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 16px 20px; }
+    .bar {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
+    .logo-badge {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center; color: white; font-size: 14px;
+    }
+    .cart {
+      display: inline-flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 999px;
+      background: #ffffff0f; border: 1px solid #ffffff14;
+    }
+    .cart b {
+      display: inline-flex; min-width: 22px; height: 22px; border-radius: 11px; align-items: center; justify-content: center;
+      background: #ffffff14; font-size: 12px;
+    }
+    h1 { margin: 18px 0 12px; font-size: 28px; }
+    .muted { color: var(--muted); font-size: 14px; }
+    .grid {
+      display: grid; gap: 18px; margin: 22px 0 60px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+    .product {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid #ffffff10; border-radius: var(--radius);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .product:hover {
+      transform: translateY(-2px);
+      border-color: #ffffff1f;
+      box-shadow: 0 6px 26px #00000040, inset 0 0 0 1px #ffffff08;
+    }
+    .thumb {
+      aspect-ratio: 16 / 10; background: #0b0e13; overflow: hidden;
+      border-bottom: 1px solid #ffffff10;
+    }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .body { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+    .title { font-size: 16px; margin: 0; line-height: 1.25; }
+    .desc { color: var(--muted); font-size: 13px; margin: 0; }
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .price { font-weight: 700; }
+    .actions { display: flex; gap: 8px; margin-top: 6px; }
+    .btn {
+      appearance: none; border: 1px solid #ffffff18; background: #ffffff10; color: var(--text);
+      padding: 8px 10px; border-radius: 10px; font-weight: 600; font-size: 13px; cursor: pointer;
+      transition: transform .12s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { background: #ffffff16; border-color: #ffffff28; }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary {
+      background: linear-gradient(135deg, #2b6cff, #8b5cf6); border: 0;
+      box-shadow: 0 6px 20px #2b6cff33;
+    }
+    .btn.primary:hover { filter: brightness(1.05); }
+    footer {
+      border-top: 1px solid #ffffff10; color: var(--muted); font-size: 13px;
+      background: linear-gradient(0deg, #0f1115
