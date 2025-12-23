@@ -87,4 +87,151 @@
     .btn.primary:hover { filter: brightness(1.05); }
     footer {
       border-top: 1px solid #ffffff10; color: var(--muted); font-size: 13px;
-      background: linear-gradient(0deg, #0f1115
+      background: linear-gradient(0deg, #0f1115aa, transparent);
+    }
+    a.more { text-decoration: none; color: var(--muted); font-size: 13px; }
+    a.more:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container bar">
+      <div class="logo">
+        <div class="logo-badge">🛒</div>
+        <span>Мой мини‑каталог</span>
+      </div>
+      <div class="cart" aria-label="Корзина">
+        <span>Корзина</span>
+        <b id="cart-count">0</b>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Каталог товаров</h1>
+    <p class="muted">Просто демо-сетка карточек для GitHub Pages</p>
+
+    <section class="grid" id="catalog">
+      <article class="product" data-name="Наушники XWave" data-price="3490">
+        <div class="thumb"><img src="https://picsum.photos/seed/phones1/600/380" alt="Наушники XWave" loading="lazy"></div>
+        <div class="body">
+          <h3 class="title">Наушники XWave</h3>
+          <p class="desc">Беспроводные, до 24 часов работы.</p>
+          <div class="row">
+            <span class="price">3 490 ₽</span>
+            <a class="more" href="#">Подробнее</a>
+          </div>
+          <div class="actions">
+            <button class="btn primary btn-add">Добавить в корзину</button>
+            <button class="btn btn-more">Быстрый просмотр</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-name="Фитнес‑браслет FitGo" data-price="2990">
+        <div class="thumb"><img src="https://picsum.photos/seed/watch2/600/380" alt="Фитнес‑браслет FitGo" loading="lazy"></div>
+        <div class="body">
+          <h3 class="title">Фитнес‑браслет FitGo</h3>
+          <p class="desc">Шаги, пульс, уведомления.</p>
+          <div class="row">
+            <span class="price">2 990 ₽</span>
+            <a class="more" href="#">Подробнее</a>
+          </div>
+          <div class="actions">
+            <button class="btn primary btn-add">Добавить в корзину</button>
+            <button class="btn btn-more">Быстрый просмотр</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-name="Колонка BoomMini" data-price="4590">
+        <div class="thumb"><img src="https://picsum.photos/seed/speaker3/600/380" alt="Колонка BoomMini" loading="lazy"></div>
+        <div class="body">
+          <h3 class="title">Колонка BoomMini</h3>
+          <p class="desc">Компактная, мощный звук 360°.</p>
+          <div class="row">
+            <span class="price">4 590 ₽</span>
+            <a class="more" href="#">Подробнее</a>
+          </div>
+          <div class="actions">
+            <button class="btn primary btn-add">Добавить в корзину</button>
+            <button class="btn btn-more">Быстрый просмотр</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-name="Клавиатура KeyLite" data-price="2590">
+        <div class="thumb"><img src="https://picsum.photos/seed/keyboard4/600/380" alt="Клавиатура KeyLite" loading="lazy"></div>
+        <div class="body">
+          <h3 class="title">Клавиатура KeyLite</h3>
+          <p class="desc">Тихие переключатели, подсветка.</p>
+          <div class="row">
+            <span class="price">2 590 ₽</span>
+            <a class="more" href="#">Подробнее</a>
+          </div>
+          <div class="actions">
+            <button class="btn primary btn-add">Добавить в корзину</button>
+            <button class="btn btn-more">Быстрый просмотр</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-name="Мышь ProTrack" data-price="1990">
+        <div class="thumb"><img src="https://picsum.photos/seed/mouse5/600/380" alt="Мышь ProTrack" loading="lazy"></div>
+        <div class="body">
+          <h3 class="title">Мышь ProTrack</h3>
+          <p class="desc">2400 DPI, эргономичный дизайн.</p>
+          <div class="row">
+            <span class="price">1 990 ₽</span>
+            <a class="more" href="#">Подробнее</a>
+          </div>
+          <div class="actions">
+            <button class="btn primary btn-add">Добавить в корзину</button>
+            <button class="btn btn-more">Быстрый просмотр</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-name="Внешний SSD Swift 512ГБ" data-price="6990">
+        <div class="thumb"><img src="https://picsum.photos/seed/ssd6/600/380" alt="Внешний SSD Swift 512ГБ" loading="lazy"></div>
+        <div class="body">
+          <h3 class="title">Внешний SSD Swift 512ГБ</h3>
+          <p class="desc">USB‑C, до 1 ГБ/с.</p>
+          <div class="row">
+            <span class="price">6 990 ₽</span>
+            <a class="more" href="#">Подробнее</a>
+          </div>
+          <div class="actions">
+            <button class="btn primary btn-add">Добавить в корзину</button>
+            <button class="btn btn-more">Быстрый просмотр</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding: 20px;">
+      Демо-страница каталога · © 2025
+    </div>
+  </footer>
+
+  <script>
+    const cartCountEl = document.getElementById('cart-count');
+    let cartCount = 0;
+
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.btn-add')) {
+        cartCount++;
+        cartCountEl.textContent = cartCount;
+      }
+      if (e.target.closest('.btn-more')) {
+        const card = e.target.closest('.product');
+        const name = card?.dataset.name || card?.querySelector('.title')?.textContent || 'Товар';
+        const price = card?.dataset.price || card?.querySelector('.price')?.textContent || '';
+        alert(`${name}\nЦена: ${price} ₽`.replace(' ₽ ₽',' ₽'));
+      }
+    });
+  </script>
+</body>
+</html>
