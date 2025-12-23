@@ -1,0 +1,90 @@
+<!-- product-2.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фитнес‑браслет FitGo — карточка товара</title>
+  <style>
+    :root { --bg:#0f1115; --panel:#151922; --panel-2:#1b2130; --text:#e7ecf3; --muted:#a9b3c7; --accent:#4f8cff; --accent-2:#8b5cf6; --radius:12px; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 1200px at 120% -10%, #20355a40, transparent),var(--bg)}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:saturate(120%) blur(8px);background:linear-gradient(180deg,#0f1115ee 0,#0f111588 90%,transparent);border-bottom:1px solid #ffffff10}
+    .container{max-width:1000px;margin:0 auto;padding:16px 20px}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--text)}
+    .logo-badge{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-size:14px}
+    nav a{color:var(--muted);text-decoration:none;margin:0 8px;font-weight:600}
+    nav a:hover{color:var(--text)}
+    .cart{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:#ffffff0f;border:1px solid #ffffff14}
+    .cart b{display:inline-flex;min-width:22px;height:22px;border-radius:11px;align-items:center;justify-content:center;background:#ffffff14;font-size:12px}
+    .prod{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin:24px 0 50px}
+    .thumb{background:#0b0e13;border:1px solid #ffffff10;border-radius:var(--radius);overflow:hidden}
+    .thumb img{width:100%;display:block}
+    .card{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid #ffffff10;border-radius:var(--radius);padding:16px}
+    h1{margin:0 0 8px;font-size:28px}
+    .muted{color:var(--muted);font-size:14px;margin:0 0 10px}
+    .price{font-weight:800;font-size:22px;margin:10px 0}
+    ul{margin:12px 0 0 18px;color:var(--muted)}
+    .actions{display:flex;gap:10px;margin-top:14px}
+    .btn{appearance:none;border:1px solid #ffffff18;background:#ffffff10;color:var(--text);padding:10px 12px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+    .btn:hover{background:#ffffff16;border-color:#ffffff28}
+    .btn.primary{background:linear-gradient(135deg,#2b6cff,#8b5cf6);border:0;box-shadow:0 6px 20px #2b6cff33}
+    @media (max-width:820px){ .prod{grid-template-columns:1fr} }
+    footer{border-top:1px solid #ffffff10;color:var(--muted);font-size:13px;background:linear-gradient(0deg,#0f1115aa,transparent)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container bar">
+      <a class="logo" href="./index.html">
+        <div class="logo-badge">🛒</div>
+        <span>Мой мини‑каталог</span>
+      </a>
+      <nav>
+        <a href="./catalog.html">Каталог</a>
+        <a href="./about.html">О проекте</a>
+      </nav>
+      <div class="cart" aria-label="Корзина">
+        <span>Корзина</span>
+        <b id="cart-count">0</b>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="prod">
+      <div class="thumb">
+        <img src="https://picsum.photos/seed/watch2/900/600" alt="Фитнес‑браслет FitGo">
+      </div>
+      <div class="card">
+        <h1>Фитнес‑браслет FitGo</h1>
+        <p class="muted">Отслеживание активности и сна, уведомления со смартфона, влагозащита IP68.</p>
+        <div class="price">2 990 ₽</div>
+        <ul>
+          <li>Шаги, пульс, SpO₂</li>
+          <li>До 10 дней без подзарядки</li>
+          <li>Дисплей AMOLED 1.1"</li>
+        </ul>
+        <div class="actions">
+          <button class="btn primary btn-add">Добавить в корзину</button>
+          <a class="btn" href="./catalog.html">← Вернуться в каталог</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding: 20px;">Карточка товара · © 2025</div>
+  </footer>
+
+  <script>
+    const CART_KEY='cartCount';
+    const el=document.getElementById('cart-count');
+    const get=()=>parseInt(localStorage.getItem(CART_KEY)||'0',10)||0;
+    const set=(n)=>{localStorage.setItem(CART_KEY,n); if(el) el.textContent=n};
+    set(get());
+    document.addEventListener('click',(e)=>{ if(e.target.closest('.btn-add')) set(get()+1); });
+  </script>
+</body>
+</html>
