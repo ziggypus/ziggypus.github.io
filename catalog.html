@@ -5,6 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Каталог товаров</title>
+  <script>
+    (function (window, document, dataLayerName, containerID) {
+        window[dataLayerName] = window[dataLayerName] || [];
+        window[dataLayerName].push({ 'start': new Date().getTime(), event: 'actm-js' });
+        var firstScript = document.getElementsByTagName('script')[0];
+        var script = document.createElement('script');
+        var dl = dataLayerName !== 'acDataLayer' ? '&l=' + dataLayerName : '';
+        script.async = true;
+        script.src = 'https://pxl.demo.altcraft.com/actm/js/actm.js?id=' + containerID + dl;
+        script.type = 'module';
+        if (firstScript && firstScript.parentNode) {
+            firstScript.parentNode.insertBefore(script, firstScript);
+        }
+    }(window, document, 'acDataLayer', 'ATM-xyeERbCyJRweA2z9'));
+</script>
   <style>
     :root { --bg:#0f1115; --panel:#151922; --panel-2:#1b2130; --text:#e7ecf3; --muted:#a9b3c7; --accent:#4f8cff; --accent-2:#8b5cf6; --radius:12px; }
     *{box-sizing:border-box}
